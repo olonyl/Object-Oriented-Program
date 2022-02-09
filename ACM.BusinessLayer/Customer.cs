@@ -4,6 +4,16 @@ namespace ACM.BusinessLayer
 {
     public class Customer
     {
+        public Customer()
+        {
+
+        }
+
+        public Customer(int customerId)
+        {
+            CustomerId = customerId;
+        }
+
         public static int InstanceCount { get; set; }
         private string _lastName;
         public int CustomerId { get; private set; }
@@ -24,5 +34,9 @@ namespace ACM.BusinessLayer
             }
         }
 
+        public bool Validate()
+        {
+            return !FirstName.IsEmpty() && !LastName.IsEmpty();
+        }
     }
 }

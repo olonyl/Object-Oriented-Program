@@ -73,5 +73,28 @@ namespace ACM.BusinessLogicTests
 
             Assert.AreEqual(3, Customer.InstanceCount);
         }
+
+        [TestMethod]
+        public void ValidateValid()
+        {
+            Customer customer = new Customer
+            {
+                FirstName = "Olonyl",
+                LastName = "Landeros"
+            };
+
+            Assert.IsTrue(customer.Validate());
+        }
+
+        [TestMethod]
+        public void ValidateMissingLastName()
+        {
+            Customer customer = new Customer
+            {
+                FirstName = "Olonyl"
+            };
+
+            Assert.IsFalse(customer.Validate());
+        }
     }
 }
