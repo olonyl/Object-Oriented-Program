@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ACM.BusinessLayer
 {
     public class Customer
     {
+        private string _lastName;
+
         public Customer()
+            : this(0)
         {
 
         }
@@ -12,10 +16,12 @@ namespace ACM.BusinessLayer
         public Customer(int customerId)
         {
             CustomerId = customerId;
+            AddressList = new List<Address>();
         }
 
+        public List<Address> AddressList { get; set; }
+        public int CustomerType { get; set; }
         public static int InstanceCount { get; set; }
-        private string _lastName;
         public int CustomerId { get; private set; }
         public string LastName { get => _lastName; set => _lastName = value; }
         public string FirstName { get; set; }
