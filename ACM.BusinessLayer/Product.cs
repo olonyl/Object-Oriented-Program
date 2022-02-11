@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace ACM.BusinessLayer
 {
+    [DebuggerDisplay("Id= {ProductId}, Description={ProductDescription,nq}")]
     public class Product
     {
         public Product()
@@ -22,6 +24,11 @@ namespace ACM.BusinessLayer
         public bool Validate()
         {
             return !ProductName.IsEmpty() && CurrentPrice != null;
+        }
+
+        public override string ToString()
+        {
+            return ProductName;
         }
     }
 }

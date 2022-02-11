@@ -44,5 +44,10 @@ namespace ACM.BusinessLayer
         {
             return !FirstName.IsEmpty() && !LastName.IsEmpty();
         }
+
+        public override string ToString()
+        {
+            return FullName;
+        }
     }
 }

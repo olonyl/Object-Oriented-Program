@@ -24,5 +24,10 @@ namespace ACM.BusinessLayer
         {
             return OrderDate != null;
         }
+
+        public override string ToString()
+        {
+            return $"{OrderDate.Value.Date} ({OrderId})";
+        }
     }
 }

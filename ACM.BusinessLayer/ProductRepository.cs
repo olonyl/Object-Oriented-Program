@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ACM.BusinessLayer
 {
@@ -7,12 +8,16 @@ namespace ACM.BusinessLayer
 
         public Product Retrieve(int productId)
         {
-            return new Product(productId)
+            var product = new Product(productId)
             {
                 CurrentPrice = 10,
                 ProductDescription = "T-Shirt",
                 ProductName = "T-Shirt"
             };
+
+            Console.WriteLine($"Object: {product}");
+
+            return product;
         }
 
         public List<Product> Retrieve()
