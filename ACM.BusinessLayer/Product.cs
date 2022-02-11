@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace ACM.BusinessLayer
 {
     [DebuggerDisplay("Id= {ProductId}, Description={ProductDescription,nq}")]
-    public class Product
+    public class Product : EntityBase
     {
         public Product()
         {
@@ -21,7 +21,7 @@ namespace ACM.BusinessLayer
         public string ProductDescription { get; set; }
         public string ProductName { get; set; }
 
-        public bool Validate()
+        public override bool Validate()
         {
             return !ProductName.IsEmpty() && CurrentPrice != null;
         }

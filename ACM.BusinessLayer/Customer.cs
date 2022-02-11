@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ACM.BusinessLayer
 {
-    public class Customer
+    public class Customer : EntityBase
     {
         private string _lastName;
 
@@ -40,7 +40,7 @@ namespace ACM.BusinessLayer
             }
         }
 
-        public bool Validate()
+        public override bool Validate()
         {
             return !FirstName.IsEmpty() && !LastName.IsEmpty();
         }

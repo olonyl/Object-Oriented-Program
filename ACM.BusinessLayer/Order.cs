@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ACM.BusinessLayer
 {
-    public class Order
+    public class Order : EntityBase
     {
         public Order()
         {
@@ -20,7 +20,7 @@ namespace ACM.BusinessLayer
         public int OrderId { get; private set; }
         public List<OrderItem> OrderItems { get; set; }
 
-        public bool Validate()
+        public override bool Validate()
         {
             return OrderDate != null;
         }
@@ -29,5 +29,6 @@ namespace ACM.BusinessLayer
         {
             return $"{OrderDate.Value.Date} ({OrderId})";
         }
+
     }
 }

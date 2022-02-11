@@ -25,9 +25,21 @@ namespace ACM.BusinessLayer
             return new List<Product>();
         }
 
-        public bool Save()
+        public bool Save(Product product)
         {
-            return true;
+            var susccess = true;
+            if (product.HasChanges && product.IsValid)
+            {
+                if (product.IsNew)
+                {
+                    //Call an Insert Stored Procedure
+                }
+                else
+                {
+                    //Call an Update Stored Procedure
+                }
+            }
+            return susccess;
         }
     }
 }

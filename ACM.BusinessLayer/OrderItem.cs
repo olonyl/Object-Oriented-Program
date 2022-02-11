@@ -2,7 +2,7 @@
 
 namespace ACM.BusinessLayer
 {
-    public class OrderItem
+    public class OrderItem : EntityBase
     {
         public OrderItem()
         {
@@ -34,7 +34,7 @@ namespace ACM.BusinessLayer
             return true;
         }
 
-        public bool Validate()
+        public override bool Validate()
         {
             return OrderQuantity > 0 && ProductId > 0 && PurchasePrice != null;
         }
