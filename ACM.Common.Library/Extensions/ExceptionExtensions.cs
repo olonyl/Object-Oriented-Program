@@ -6,13 +6,13 @@ namespace System
     {
         public static string GetFullErrorMessage(this Exception exception)
         {
-            var sbMessage = new StringBuilder();
-            sbMessage.AppendLine(exception.Message);
+            var sbMessage = new StringBuilder(exception.Message);
 
             var innerException = exception.InnerException;
             while (innerException != null)
             {
-                sbMessage.AppendLine(innerException.Message);
+                sbMessage.AppendLine();
+                sbMessage.Append(innerException.Message);
                 innerException = innerException.InnerException;
             }
             return sbMessage.ToString();

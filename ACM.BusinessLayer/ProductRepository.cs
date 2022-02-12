@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ACM.BusinessLayer
 {
@@ -14,8 +13,6 @@ namespace ACM.BusinessLayer
                 ProductDescription = "T-Shirt",
                 ProductName = "T-Shirt"
             };
-
-            Console.WriteLine($"Object: {product}");
 
             return product;
         }
