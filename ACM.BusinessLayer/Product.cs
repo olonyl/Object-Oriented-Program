@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ACM.Common.Library.Interfaces;
+using System;
 using System.Diagnostics;
 
 namespace ACM.BusinessLayer
 {
     [DebuggerDisplay("Id= {ProductId}, Description={ProductDescription,nq}")]
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
         private string _productName;
 
@@ -35,6 +36,12 @@ namespace ACM.BusinessLayer
         public override string ToString()
         {
             return ProductName;
+        }
+
+        public string Log()
+        {
+            var logString = $"{ProductId}: {ProductName} Detail: {ProductDescription} Status: {EntityState.GetDescription()}";
+            return logString;
         }
     }
 }

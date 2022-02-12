@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ACM.Common.Library.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace ACM.BusinessLayer
 {
-    public class Order : EntityBase
+    public class Order : EntityBase, ILoggable
     {
         public Order()
         {
@@ -30,5 +31,10 @@ namespace ACM.BusinessLayer
             return $"{OrderDate.Value.Date} ({OrderId})";
         }
 
+        public string Log()
+        {
+            var logString = $"{OrderId}: Date: {OrderDate.Value.Date} Status: {EntityState.GetDescription()}";
+            return logString;
+        }
     }
 }

@@ -51,12 +51,17 @@
   <ItemGroup>
     <Compile Include="Extensions\ExceptionExtensionsTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />
+    <Compile Include="LoggingServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ACM.BusinessLayer\ACM.BusinessLayer.csproj">
+      <Project>{79582224-C385-44C2-AF17-09F1310F55D2}</Project>
+      <Name>ACM.BusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ACM.Common.Library\ACM.Common.Library.csproj">
       <Project>{1f96ab18-6872-44e7-8803-22d8ecd6720c}</Project>
       <Name>ACM.Common.Library</Name>

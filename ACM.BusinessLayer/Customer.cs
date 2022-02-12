@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ACM.Common.Library.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace ACM.BusinessLayer
 {
-    public class Customer : EntityBase
+    public class Customer : EntityBase, ILoggable
     {
         private string _lastName;
 
@@ -48,6 +49,12 @@ namespace ACM.BusinessLayer
         public override string ToString()
         {
             return FullName;
+        }
+
+        public string Log()
+        {
+            var logString = $"{CustomerId}: {FullName} Email: {EmailAddress} Status: {EntityState.GetDescription()}";
+            return logString;
         }
     }
 }
