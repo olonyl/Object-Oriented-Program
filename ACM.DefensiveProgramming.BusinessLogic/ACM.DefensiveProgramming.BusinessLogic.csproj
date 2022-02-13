@@ -53,6 +53,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ACM.Common.Library\ACM.Common.Library.csproj">
+      <Project>{1f96ab18-6872-44e7-8803-22d8ecd6720c}</Project>
+      <Name>ACM.Common.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ACM.DefensiveProgramming.Core.Common\ACM.DefensiveProgramming.Core.Common.csproj">
       <Project>{F7FAFABC-F032-48F2-B1F3-127B5A47B81F}</Project>
       <Name>ACM.DefensiveProgramming.Core.Common</Name>

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{04DA6F13-EA71-4C9D-A92E-763F7B8CFE64}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ACM.Win</RootNamespace>
-    <AssemblyName>ACM.Win</AssemblyName>
+    <RootNamespace>ACM.DefensiveProgramming.Win</RootNamespace>
+    <AssemblyName>ACM.DefensiveProgramming.Win</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,10 +52,19 @@
     <Compile Include="OrderWin.Designer.cs">
       <DependentUpon>OrderWin.cs</DependentUpon>
     </Compile>
+    <Compile Include="PedometerWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedometerWin.Designer.cs">
+      <DependentUpon>PedometerWin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="OrderWin.resx">
       <DependentUpon>OrderWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedometerWin.resx">
+      <DependentUpon>PedometerWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
