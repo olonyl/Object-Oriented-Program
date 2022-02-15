@@ -33,10 +33,13 @@ namespace ACM.DefensiveProgramming.BusinessLogic
 
             if (emailReceipt)
             {
-                customer.ValidateEmail();
-                _customerRepository.Update();
+                var result = customer.ValidateEmail();
+                if (result.Success)
+                {
+                    _customerRepository.Update();
 
-                _emailLibrary.SendEmail(customer.EmailAddress, "Here is your receipt");
+                    _emailLibrary.SendEmail(customer.EmailAddress, "Here is your receipt");
+                }
             }
         }
     }

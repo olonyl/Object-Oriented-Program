@@ -14,7 +14,7 @@ namespace ACM.DefensiveProgramming.Win
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             var customer = new Customer();
-            var result = customer.CalculatePrecentOfGoalStatus(
+            var result = customer.CalculatePercentOfGoalStatus(
                 txtGoalSteps.Text,
                 txtActualSteps.Text);
             lblResult.Text = $"You reached {result}% of your goal!";
