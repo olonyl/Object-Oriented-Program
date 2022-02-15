@@ -29,7 +29,7 @@ namespace ACM.DefensiveProgramming.BusinessLogic
 
             _inventoryRepository.OrderItems(order, allowSplitOrders);
 
-            payment.ProcessPayment(payment);
+            payment.ProcessPayment();
 
             if (emailReceipt)
             {

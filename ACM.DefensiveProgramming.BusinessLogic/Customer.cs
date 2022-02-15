@@ -55,16 +55,16 @@ namespace ACM.DefensiveProgramming.BusinessLogic
         public decimal CalculatePercentOfGoalStatus(string goalSteps, string actualSteps)
         {
 
-            decimal goalStepCount;
-            decimal actualStepsCount = 0;
-
             if (goalSteps.IsEmpty()) throw new ArgumentException("Goal must be entered", nameof(goalSteps));
             if (actualSteps.IsEmpty()) throw new ArgumentException("Actual steps must be entered", nameof(actualSteps));
 
+            decimal goalStepCount;
             if (!decimal.TryParse(goalSteps, out goalStepCount))
             {
                 throw new ArgumentException("Goal must be numeric");
             }
+
+            decimal actualStepsCount = 0;
             if (!decimal.TryParse(actualSteps, out actualStepsCount))
             {
                 throw new ArgumentException("Actual steps must be numeric");
