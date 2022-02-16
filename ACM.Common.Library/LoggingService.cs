@@ -12,7 +12,7 @@ namespace ACM.Common.Library
             // Set a variable to the Documents path.
             string docPath =
               Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            using (StreamWriter streamWriter = new StreamWriter(Path.Combine(docPath, "ACMLogging.txt")))
+            using (StreamWriter streamWriter = new StreamWriter(Path.Combine(docPath, "ACMLogging.txt"), true))
             {
                 foreach (var item in changedItems)
                 {

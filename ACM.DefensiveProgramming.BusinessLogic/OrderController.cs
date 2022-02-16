@@ -1,4 +1,7 @@
 ﻿using ACM.DefensiveProgramming.Core.Common;
+using System;
+using System.Diagnostics;
+using System.Linq;
 
 namespace ACM.DefensiveProgramming.BusinessLogic
 {
@@ -17,18 +20,27 @@ namespace ACM.DefensiveProgramming.BusinessLogic
             _emailLibrary = new EmailLibrary();
         }
 
-        public void PlaceOrder(Customer customer,
-            Order order, Payment payment,
+        public OperationResult PlaceOrder(Customer customer,
+            Order order,
+            Payment payment,
             bool allowSplitOrders,
             bool emailReceipt)
         {
+
+            Debug.Assert(_customerRepository != null, "Missing customer repository instance");
+            Debug.Assert(_orderRepository != null, "Missing order repository instance");
+            Debug.Assert(_inventoryRepository != null, "Missing inventory repository instance");
+            Debug.Assert(_emailLibrary != null, "Missing email library instance");
+
+            if (customer == null) throw new ArgumentNullException("Customer instance is null");
+            if (order == null) throw new ArgumentNullException("Order instance is null");
+            if (payment == null) throw new ArgumentNullException("Payment instance is null");
+
+            var operationResult = new OperationResult();
+
             _customerRepository.Add(customer);
-
-            var orderRepository = new OrderRepository();
-            orderRepository.Add(order);
-
+            _orderRepository.Add(order);
             _inventoryRepository.OrderItems(order, allowSplitOrders);
-
             payment.ProcessPayment();
 
             if (emailReceipt)
@@ -36,11 +48,18 @@ namespace ACM.DefensiveProgramming.BusinessLogic
                 var result = customer.ValidateEmail();
                 if (result.Success)
                 {
-                    _customerRepository.Update();
-
                     _emailLibrary.SendEmail(customer.EmailAddress, "Here is your receipt");
                 }
+                else
+                {
+                    // log the message
+                    if (result.MessageList.Any())
+                    {
+                        operationResult.AddMessage(result.MessageList[0]);
+                    }
+                }
             }
+            return operationResult;
         }
     }
 }

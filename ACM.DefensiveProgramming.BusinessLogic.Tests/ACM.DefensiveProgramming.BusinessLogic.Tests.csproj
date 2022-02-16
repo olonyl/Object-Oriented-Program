@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerTests.cs" />
+    <Compile Include="OrderControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +60,10 @@
     <ProjectReference Include="..\ACM.DefensiveProgramming.BusinessLogic\ACM.DefensiveProgramming.BusinessLogic.csproj">
       <Project>{feb43736-d7a3-4c05-8085-1dddeddaac5a}</Project>
       <Name>ACM.DefensiveProgramming.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACM.DefensiveProgramming.Core.Common\ACM.DefensiveProgramming.Core.Common.csproj">
+      <Project>{F7FAFABC-F032-48F2-B1F3-127B5A47B81F}</Project>
+      <Name>ACM.DefensiveProgramming.Core.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

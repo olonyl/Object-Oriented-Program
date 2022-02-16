@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -90,6 +91,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ACM.Common.Library\ACM.Common.Library.csproj">
+      <Project>{1F96AB18-6872-44E7-8803-22D8ECD6720C}</Project>
+      <Name>ACM.Common.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ACM.DefensiveProgramming.BusinessLogic\ACM.DefensiveProgramming.BusinessLogic.csproj">
       <Project>{feb43736-d7a3-4c05-8085-1dddeddaac5a}</Project>
       <Name>ACM.DefensiveProgramming.BusinessLogic</Name>

@@ -23,7 +23,7 @@ namespace ACM.DefensiveProgramming.BusinessLogic
 
             var result = new OperationResult();
 
-            if (!EmailAddress.IsEmpty())
+            if (EmailAddress.IsEmpty())
             {
                 result.Success = false;
                 result.MessageList.Add("Email address is null");

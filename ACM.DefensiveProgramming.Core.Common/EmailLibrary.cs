@@ -1,4 +1,6 @@
-﻿namespace ACM.DefensiveProgramming.Core.Common
+﻿using System;
+
+namespace ACM.DefensiveProgramming.Core.Common
 {
     public class EmailLibrary
     {
@@ -8,6 +10,15 @@
                If a valid email address is provided
             Send an email
              */
+            try
+            {
+                //Send an email.
+            }
+            catch (InvalidOperationException ex)
+            {
+                // log the issue
+                throw;
+            }
         }
     }
 }

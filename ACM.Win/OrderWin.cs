@@ -13,6 +13,11 @@ namespace ACM.DefensiveProgramming.Win
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Button button = sender as Button;
+            if (button != null)
+            {
+                button.Text = "Processing...";
+            }
             PlaceOrder();
 
         }
@@ -33,12 +38,21 @@ namespace ACM.DefensiveProgramming.Win
 
             OrderController orderController = new OrderController();
 
-            orderController.PlaceOrder(
-                customer,
-                order,
-                payment,
-                allowSplitOrders: allowSplitOrders,
-                emailReceipt: emailReceipt);
+            try
+            {
+                orderController.PlaceOrder(
+                  customer,
+                  order,
+                  payment,
+                  allowSplitOrders: allowSplitOrders,
+                  emailReceipt: emailReceipt);
+
+            }
+            catch (ArgumentNullException exception)
+            {
+                MessageBox.Show(exception.GetFullErrorMessage());
+            }
+
         }
 
     }

@@ -25,7 +25,7 @@ namespace ACM.DefensiveProgramming.BusinessLogic
             Call the save stored procedure
              */
             PaymentType paymentTypeOption;
-            if (Enum.TryParse(PaymentType.ToString(), out paymentTypeOption))
+            if (!Enum.TryParse(PaymentType.ToString(), out paymentTypeOption))
             {
                 throw new InvalidEnumArgumentException("Payment Type", (int)PaymentType, typeof(PaymentType));
             }

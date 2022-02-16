@@ -14,10 +14,19 @@ namespace ACM.DefensiveProgramming.Win
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             var customer = new Customer();
-            var result = customer.CalculatePercentOfGoalStatus(
-                txtGoalSteps.Text,
-                txtActualSteps.Text);
-            lblResult.Text = $"You reached {result}% of your goal!";
+            try
+            {
+                var result = customer.CalculatePercentOfGoalStatus(
+                             txtGoalSteps.Text,
+                             txtActualSteps.Text);
+                lblResult.Text = $"You reached {result}% of your goal!";
+            }
+            catch (ArgumentException exception)
+            {
+                MessageBox.Show(exception.GetFullErrorMessage());
+                lblResult.Text = string.Empty;
+            }
+
         }
     }
 }
